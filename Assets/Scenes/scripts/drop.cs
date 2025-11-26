@@ -18,7 +18,7 @@ public class drop : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && !spawned)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !spawned)
         {
             GameObject proj = Instantiate(p, t);
             proj.gameObject.tag = "projectile";

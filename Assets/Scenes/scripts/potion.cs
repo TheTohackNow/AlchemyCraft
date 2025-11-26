@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class poiton : MonoBehaviour
+public class potion : MonoBehaviour
 {
     public float live;
     public Transform t;
