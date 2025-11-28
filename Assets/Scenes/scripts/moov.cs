@@ -41,9 +41,8 @@ public class moov : MonoBehaviour
             x = Mathf.MoveTowards(x, 0, deceleration * Time.fixedDeltaTime);
         if (targetY == 0)
             y = Mathf.MoveTowards(y, 0, deceleration * Time.fixedDeltaTime);
-
-
         r.linearVelocity = new Vector2(x, y);
     }
 
 }
+

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class hp : MonoBehaviour
 {
-    public int Hp;
+    public float Hp;
     void Start()
     {
         

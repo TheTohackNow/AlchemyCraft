@@ -1,43 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class drop : MonoBehaviour
 {
     public Transform t;
     public GameObject p;
-    public bool spawned;
-    public float defcd = 0.5f;
-    public float cd = 0.5f;
+    private int id = 0;
+
+    public float[][] effectList;
 
     void Start()
     {
-        
+        effectList = new float[5][];
+        for (int i = 0; i < 5; i++)
+            effectList[i] = new float[5];
     }
 
-    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !spawned)
-        {
-            GameObject proj = Instantiate(p, t);
-            proj.gameObject.tag = "projectile";
-            spawned = true;
-        }
+        if (Input.GetKeyDown(KeyCode.Alpha1)) id = 0;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) id = 1;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) id = 2;
+        if (Input.GetKeyDown(KeyCode.Alpha4)) id = 3;
+        if (Input.GetKeyDown(KeyCode.Alpha5)) id = 4;
 
-        /*------------------------------------------*/
-        
-        if (spawned)
+        if (Input.GetMouseButtonDown(0))
         {
-            cd -= Time.deltaTime;
-            if (cd <= 0)
-            {
-                spawned = false;
-                cd = defcd;
-            }
+            GameObject e = Instantiate(p, t);
+            poiton Ee = e.GetComponent<poiton>();
 
+            Ee.radius = effectList[id][0];
+            Ee.dmg = effectList[id][1];
+            Ee.time = effectList[id][2];
+            Ee.expandSpeed = effectList[id][3];
+            Ee.damageDelay = effectList[id][4];
         }
     }
-
-    
 }
