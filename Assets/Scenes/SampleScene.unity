@@ -129,12 +129,12 @@ GameObject:
   m_Component:
   - component: {fileID: 188689041}
   m_Layer: 0
-  m_Name: holder
+  m_Name: holderMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &188689041
 Transform:
   m_ObjectHideFlags: 0
@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 612074890}
   - component: {fileID: 612074891}
   - component: {fileID: 612074892}
+  - component: {fileID: 612074893}
   m_Layer: 0
   m_Name: Square
   m_TagString: Player
@@ -514,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::switchW
   switchState: 0
+  current: 1
 --- !u!114 &612074892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,7 +531,22 @@ MonoBehaviour:
   attack: {fileID: 188689040}
   t: {fileID: 188689041}
   dmg: 5
-  cd: 0.15
+  cd: 0.000001
+--- !u!114 &612074893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612074883}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccdcab5f54a92e4c940e616a7060598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::range
+  bulletPrefab: {fileID: 8981961739611278438, guid: 78b7fb0a2ad60014888556d0e6f388bb, type: 3}
+  speed: 15
+  dmg: 5
 --- !u!1 &1293855816
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::checkDMG
   dmg: 5
+  liveTime: 3
 --- !u!61 &1293855820
 BoxCollider2D:
   m_ObjectHideFlags: 0
